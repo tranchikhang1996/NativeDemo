@@ -2,7 +2,7 @@
 #include <string>
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_com_example_nativedemo_MainActivity_createUserFromJNI(
+Java_com_example_nativedemo_JNICaller_createUserFromJNI(
         JNIEnv *env,
         jobject,
         jstring name,
@@ -17,7 +17,7 @@ Java_com_example_nativedemo_MainActivity_createUserFromJNI(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_nativedemo_MainActivity_createUserInfoFromJNI(
+Java_com_example_nativedemo_JNICaller_createUserInfoFromJNI(
         JNIEnv *env,
         jobject,
         jobject user) {

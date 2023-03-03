@@ -13,17 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val user = createUserFromJNI("Khang Tran", 29)
-        binding.sampleText.text = createUserInfoFromJNI(user)
-    }
-
-    external fun createUserFromJNI(name: String, old: Int): User
-    external fun createUserInfoFromJNI(user: User): String
-
-    companion object {
-        // Used to load the 'nativedemo' library on application startup.
-        init {
-            System.loadLibrary("nativedemo")
-        }
+        val user = JNICaller.createUserFromJNI("Khang Tran", 29)
+        binding.sampleText.text = JNICaller.createUserInfoFromJNI(user)
     }
 }
